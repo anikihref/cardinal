@@ -1,0 +1,27 @@
+@import "null";
+@import "fonts";
+@import "variables";
+@import "header";
+@import "footer";
+@import "represent";
+@import "accessories";
+@import "greeting";
+@import "contacts";
+@import "swiper";
+
+.container {
+	margin: 0 auto;
+	max-width: $cont + 20px;
+	padding: 0 10px;
+	height: 100%;
+}
+.green-bg {
+	background-color:#219653;
+}
+.blue {
+	color: $blueCol;
+}
+.hide {
+	opacity: 0;
+}
+

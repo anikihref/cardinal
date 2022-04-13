@@ -1,0 +1,35 @@
+$blueCol: #2A4ABD;
+$grayCol: #979797;
+$specFont: 'ManifoldExtendedCF';
+$cont: 1360px;
+$black: #141414;
+
+%arial400 {
+	font-weight: 400;
+	font-family: 'Arial';
+	font-size: 1rem;
+}
+%arial700 {
+	font-weight: 700;
+	font-family: 'Arial';
+}
+%container {
+	margin: 0 auto;
+	max-width: $cont + 20px;
+	padding: 0 10px;
+	height: 100%;
+}
+
+
+$fz: 16px;
+
+@function rem($size) {
+  $remSize: $size / $fz;
+  @return $remSize * 1rem;
+}
+
+@function pxPercent($curr, $static) { // первое значение это то значение которое мы хотим перевести, второе - то от которого беруться проценты
+	$outer: $curr / $static;
+	@return $outer * 100%;
+}
+

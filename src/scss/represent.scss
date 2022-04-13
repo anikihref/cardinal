@@ -1,0 +1,339 @@
+.represent {
+	overflow: hidden;
+	padding: 40px 0;
+	&__container {
+		@extend %container;
+		
+	}
+	&__header {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&__title {
+		font-size: rem(30px);
+		font-family: $specFont;
+		font-weight: 900;
+		line-height: pxPercent(40px, 30px);
+	}
+
+	&__header-content {
+		display: flex;
+		justify-content: space-between;
+		& > p {
+			font-weight: 200;
+			font-size: rem(21px);
+			line-height: pxPercent(24px, 21px);
+			max-width: 273px;
+		}
+	}
+
+	&__header-btn {
+		width: 150px;
+		text-align: center;
+		margin:0  10px;
+		& a {
+			padding: 10% 20%; 
+			font-size: rem(18px);
+			color: #141414;
+			display: block;
+			background-color: #f5f5f5;
+		}
+	}
+
+	&__main {
+		margin-top: 70px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&__controls {
+		position: relative;
+	}
+
+	&__text {
+		color: $grayCol;
+		position: absolute;
+		font-size: rem(14px);
+		line-height: pxPercent(16px, 14px);
+		bottom: 0;
+		left: 0;
+		b {
+			color: $black;
+		}
+	}
+	
+	&__controls-name {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: pxPercent(380px, $cont / 2);
+		margin-bottom: 20px;
+		& p {
+			font-size: rem(18px);
+			font-weight: 700;
+			line-height: pxPercent(20px, 18px);
+		}
+	}
+
+	&__controls-svg {
+		cursor: pointer;
+		transform: translateX(20%);
+		
+	}
+
+	&__controls-item {
+	}
+
+	&__main-content {
+		display: flex;
+		align-items: center;
+		height: 400px;
+
+		& img {
+			transition: .2s;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.controls-item {
+	transition: all .3s ease-out;
+	max-width: pxPercent(380px, $cont / 2);
+	display: flex;	
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	&__name {
+		line-height: pxPercent(18px, 16px);
+	}
+
+	&__dot {
+		transition: all .3s ease-out;
+		
+		
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #e5e5e5;
+	}
+}
+
+.controls-item_active {
+	color: $blueCol ;
+	.controls-item__dot {
+		background-color: $blueCol ;
+	}
+}
+
+@media (max-width:1024px) {
+	body .represent {
+
+		&__container {
+		}
+
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__header-content {
+		}
+
+		&__header-btn {
+		}
+
+		&__main {
+		}
+
+		&__controls {
+			
+		}
+
+		&__controls-name {
+		}
+
+		&__controls-svg {
+		}
+
+		&__controls-item {
+		}
+
+		&__text {
+		}
+
+		&__main-content {
+			height: 250px;
+		}
+}
+.controls-item {
+
+		&_active {
+		}
+
+		&__name {
+		}
+
+		&__dot {
+		}
+}
+}
+@media (max-width: 768px) {
+	body .represent {
+		padding: 20px 0 30px 0;
+		&__container {
+			padding: 0 25px;
+		}
+
+		&__header {
+			position: relative;
+		}
+
+		&__title {
+			font-size: rem(18px);
+		}
+
+		&__header-content {
+			flex-direction: column-reverse;
+			align-items: flex-end;
+
+			p {
+				position: absolute;
+				margin-top: 15px;
+				font-size: rem(16px);
+				white-space: nowrap;
+				left: 0;
+				bottom: -25px;
+			}
+		}
+
+		&__header-btn {
+			width: 100px;
+			a {
+				font-size: rem(12px);
+			}
+		}
+
+		&__main {
+			grid-template-columns: 1fr;
+		}
+
+		&__controls {
+			margin-top: 30px;
+			order: 1;
+		}
+
+		&__controls-name {
+			width: 300px;	
+		}
+
+		&__controls-svg {
+		}
+
+		&__controls-item {
+		}
+
+		&__text {
+			bottom: 30px;
+			right: 0;
+			left: auto;
+		}
+
+		&__main-content {
+
+			order: 0;
+		}
+}
+.controls-item {
+		width: 300px;
+		&_active {
+		}
+
+		&__name {
+			white-space: nowrap;
+			padding-right: 15px;
+		}
+
+		&__dot {
+		}
+}
+
+}
+@media (max-width: 425px) {
+	body .represent {
+
+		&__container {
+		}
+
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__header-content {
+			p {
+				font-size: rem(12px);
+			}
+		}
+
+		&__header-btn {
+		}
+
+		&__main {
+		}
+
+		&__controls {
+		}
+
+		&__controls-name {
+			p {
+				font-size: rem(12px);
+
+			}
+		}
+
+		&__controls-svg {
+			width: 12px;
+			svg {
+				max-width: 100%;
+			}
+		}
+
+		&__controls-item {
+		}
+
+		&__text {
+			font-size: rem(8px);
+			right: 20px;
+		}
+
+		&__main-content {
+			height: 180px;
+			width: 250px;
+		}
+}
+body .controls-item {
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+		&_active {
+		}
+
+		&__name {
+			font-size: rem(10px);
+		}
+
+		&__dot {
+			width: 5px;
+			height: 5px;
+		}
+}
+
+}

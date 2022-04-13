@@ -1,0 +1,185 @@
+.footer {
+	overflow: hidden;
+	background-color: #141723;
+	padding: 40px 0 25px 0;
+	position: relative;
+	&__content {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+
+	&__item {
+		position: relative;
+		// &:nth-child(1)::before {
+		// 	content: "© 2010-2021";
+		// }
+		// &:nth-child(2)::before {
+		// 	content: "Политика конфиденциальности";
+		// }
+		// &:nth-child(3)::before {
+		// 	content: "Юридическая информация";
+		// }
+		// &::before {
+		// 	z-index: 1000;
+		// 	cursor: pointer;
+		// 	position: absolute;
+		// 	bottom: -68px;
+		// 	left: 0;
+		// 	color: #fff;
+		// 	font-size: 0.75rem;
+		// 	line-height: 27px;
+		// }
+	}
+
+	&__logo {
+		cursor: pointer;
+		width: 275px;
+		position: relative;
+		& img {
+			max-width: 100%;
+		}
+		&::before { 
+			cursor: pointer;
+			content: "компания";
+			top: -2px;
+			font-size: 0.925rem;
+			left: 10%;
+			color: #fff;
+			position: absolute;
+		}
+	}
+
+	&__item-title {
+		color: #fff;
+		font-family: 'Arial';
+		font-size: .925rem;
+		font-weight: 700;
+		line-height: 27px;
+		margin-bottom: 10px;
+	}
+
+	&__list {
+	}
+
+	&__list-item {
+		
+	}
+
+	&__link {
+		&:hover {
+			text-decoration: underline;
+		}
+		line-height: 27px;
+		font-size: .925rem;
+		color: $grayCol;
+	}
+
+	&__additional-links {
+		margin-top: 70px;
+		grid-column-start: 1;
+		grid-column-end: 4;
+		display: grid;
+		grid-template-columns: 50% 25% 25%;
+
+		width: 100%;
+	}
+
+	&__addtitonal-link, &__addtitonal-date{
+		color: #fff;
+		font-size: rem(14px);
+	}
+	&__addtitonal-link {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+}
+
+
+
+
+@media (max-width: 768px) {
+	.footer {
+
+		&__content {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&__item {
+			&:nth-child(1) {
+				grid-column-start: 1;
+				grid-column-end: 4	;
+				margin-bottom: 30px;
+			}
+			&:nth-child(3) {
+				margin: 0 auto;
+			}
+		}
+
+		&__logo {
+		}
+
+		&__item-title {
+		}
+
+		&__list {
+		}
+
+		&__list-item {
+		}
+
+		&__link {
+		}
+
+		&__additional-links {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+	
+		&__addtitonal-link, &__addtitonal-date{
+			font-size: rem(11px);
+		}
+}
+
+}
+@media (max-width: 425px) {
+	body .footer {
+		&__content {
+		}
+
+		&__item {
+		}
+
+		&__logo {
+		}
+
+		&__item-title {
+			font-size: rem(12px);
+		}
+
+		&__list {
+		}
+
+		&__list-item {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		&__link {
+			font-size: rem(10px);
+			line-height: 130%;
+		}
+
+		&__additional-links {
+			margin-top: 50px;
+		}
+
+		&__addtitonal-link, &__addtitonal-date {
+			font-size: rem(8px);
+		}
+}
+
+}

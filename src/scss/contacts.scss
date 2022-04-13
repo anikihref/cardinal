@@ -1,0 +1,503 @@
+.contacts {
+	overflow: hidden;
+	padding-top: 40px;
+	border-top: 1px solid #CFCFCF;
+	&__container {
+		@extend %container
+	}
+	&__content {
+		display: flex;
+	}
+
+	&__left {
+		margin-right: calc(45px / $cont * 100%);
+
+	}
+	&__title-adress, &__title-phone {
+		display: none;
+	}
+	&__title-block {
+		margin-bottom: 56px;
+	}
+	&__title {
+		font-family: $specFont;
+		font-weight: 900;
+		font-size: rem(30px);
+		line-height: 133%;
+		letter-spacing: 1%;
+	}
+
+	&__map {
+		width: 580px;
+		margin-left: -10px;
+		img {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 0 40px 0;
+	}
+
+	&__adress-block {	
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		height: 100px;
+	}
+
+	&__adress {
+		display: block;
+		max-width: 291px;
+		margin-right: 30px;
+		font-size: rem(21px);
+		line-height: pxPercent(24px, 21px);
+	}
+
+	&__adress-phone {
+		display: flex;
+		align-items: center;
+	}
+
+	&__adress-svg {
+		width: 19px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__adress-num {
+		position: relative;
+		margin-left: 12px;
+		font-family: $specFont;
+		font-weight: 100;
+		color: $black;
+		b {
+			font-weight: 900;
+			font-family: $specFont;
+		}
+		&::before {
+			content: "Звонок по России бесплатный";
+			bottom: -15px;
+			right: 0;
+			position: absolute;
+			font-size: 10px;
+			font-family: "Arial";
+			color: #979797;
+		}
+	}
+
+	&__phone {
+		display: flex;
+		align-items: center;
+	}
+
+	&__phone-svg {
+		width: 41px;
+		margin-right: 24px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__phone-list {
+	}
+
+	&__phone-item {
+		.contacts__phone-svg {
+			display: none;
+		}
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__phone-num {
+		font-size: rem(20px);
+		font-family: $specFont;
+		font-weight: 700;
+		color: $black;
+		span {
+			font-size: rem(20px);
+			color: $blueCol;
+			font-family: $specFont;
+			font-weight: 700;
+		}
+	}
+
+	&__mail-block {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__mail {
+		display: flex;
+		align-items: center;
+	}
+
+	&__mail-svg {
+		width: 20px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__mail-text {
+		color: $black;
+		margin-left: 10px;
+		font-size: rem(16px);
+	}
+
+	&__btn {
+		background-color: #f5f5f5;
+		width: 150px;
+		height: 50px;
+	}
+
+	&__btn-link {
+		color: $black;
+		font-size: rem(18px);
+		display: block;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 1024px) {
+	body .contacts {
+		padding: 0;
+	border-top: none;
+
+		&__container {
+			padding: 0;
+		}
+		&__content {
+			flex-direction: column;
+		}
+
+		&__left {
+			margin-right: 0;
+		}
+
+		&__title-block {
+			padding: 0 25px;
+			margin-bottom: 20px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-row-gap: 30px;
+		}
+
+		&__title {
+		}
+
+		&__title-phone {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		&__adress-svg {
+		}
+
+		&__title-num {
+			margin-left: 12px;
+			position: relative;
+			font-family: $specFont;
+			font-weight: 100;
+			color: $black;
+			b {
+				font-weight: 900;
+				font-family: $specFont;
+			}
+			&::before {
+				content: "Звонок по России бесплатный";
+				bottom: -15px;
+				right: 0;
+				position: absolute;
+				font-size: 10px;
+				font-family: "Arial";
+				color: #979797;
+			}
+		}
+
+		&__title-adress {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			display: block;
+			font-size: rem(18px);
+		}
+
+		&__map {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		&__right {
+			padding: 50px 25px;
+
+			flex-direction: row;
+		}
+
+		&__adress-block {
+			display: none;
+		}
+
+		&__phone {
+			& > .contacts__phone-svg {
+				display: none;
+			}
+		}
+
+		&__phone-svg {
+		}
+
+		&__phone-list {
+		}
+
+		&__phone-item {
+			display: flex;
+			align-items: center;
+			.contacts__phone-svg {
+				width: 20px;
+				display: block;
+			}
+		}
+
+		&__phone-num {
+		}
+
+		&__mail-block {
+			flex-direction: column;
+			align-items: flex-end;
+		}
+
+		&__mail {
+		}
+
+		&__mail-svg {
+			transform: scale(1.5);
+		}
+
+		&__mail-text {
+			font-size: rem(20px);
+			margin-left: 20px;
+		}
+
+		&__btn {
+		}
+
+		&__btn-link {
+		}
+}
+
+}
+
+@media (max-width: 768px) {
+	body .contacts {
+
+		&__container {
+
+		}
+
+		&__content {
+		}
+
+		&__left {
+		}
+
+		&__title-block {
+		}
+
+		&__title {
+			font-size: rem(20px);
+		}
+
+		&__title-phone {
+		}
+
+		&__adress-svg {
+		}
+
+		&__title-num {
+			font-size: rem(12px);
+			&::before {
+				bottom: -9px;
+				font-size: rem(8px);
+			}
+		}
+
+		&__title-adress {
+			font-size: rem(14px);
+		}
+
+		&__map {
+		}
+
+		&__right {
+			padding: 30px 25px;
+			
+		}
+
+		&__adress-block {
+		}
+
+		&__adress {
+		}
+
+		&__adress-phone {
+		}
+
+		&__adress-num {
+		}
+
+		&__phone {
+		}
+
+		&__phone-svg {
+			width: 16px !important;
+		}
+
+		&__phone-list {
+		}
+
+		&__phone-item {
+		}
+
+		&__phone-num {
+			font-size: rem(14px);
+			span {
+				font-size: rem(14px);
+
+			}
+		}
+
+		&__mail-block {
+		}
+
+		&__mail {
+		}
+
+		&__mail-svg {
+			transform: scale(.8) !important;
+		}
+
+		&__mail-text {
+			font-size: rem(16px);
+		}
+
+		&__btn {
+			width: 100px;
+			height: 40px;
+		}
+
+		&__btn-link {
+			font-size: rem(14px);
+		}
+}
+
+}
+
+@media (max-width: 425px) {
+	body .contacts {
+
+		&__container {
+		}
+
+		&__content {
+		}
+
+		&__left {
+		}
+
+		&__title-block {
+		}
+
+		&__title {
+			font-size: rem(18px);
+		}
+
+		&__title-phone {
+		}
+
+		&__adress-svg {
+			transform: scale(.8);
+		}
+
+		&__title-num {
+			font-size: rem(10px);
+			margin-left: 8px;
+		}
+
+		&__title-adress {
+		}
+
+		&__map {
+		}
+
+		&__right {
+		}
+
+		&__adress-block {
+		}
+
+		&__adress {
+		}
+
+		&__adress-phone {
+		}
+
+		&__adress-num {
+		}
+
+		&__phone {
+		}
+
+		&__phone-svg {
+			transform: scale(.8);
+			margin-right: 10px;
+		}
+
+		&__phone-list {
+		}
+
+		&__phone-item {
+		}
+
+		&__phone-num {
+			font-size: rem(10px);
+			span {
+			font-size: rem(10px);
+
+			}
+		}
+
+		&__mail-block {
+		}
+
+		&__mail {
+		}
+
+		&__mail-svg {
+			transform: scale(.9);
+		}
+
+		&__mail-text {
+			font-size: rem(12px);
+			margin-left: 10px;
+		}
+
+		&__btn {
+		}
+
+		&__btn-link {
+		}
+}
+
+}
